@@ -25,6 +25,8 @@ public class PostMethodQuiz09 extends HttpServlet{
 		out.print("<h2>지원 내용</h2>");
 		out.print(introduction);
 		
+		//test용 주석추가
+		
 		
 	}
 
