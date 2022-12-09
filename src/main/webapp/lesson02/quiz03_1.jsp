@@ -23,16 +23,18 @@
 	String result = "";
 	if(BMI<=20){
 		result = "저체충";
-	}else if(21<=BMI && BMI<=25){
+	}else if(20<BMI && BMI<=25){ //21이하는 생략가능
 		result = "정상";
-	}else if(26<=BMI && BMI<=30){
+	}else if(25<BMI && BMI<=30){
 		result = "과체중";
-	}else if(BMI>=31){
+	}else{ //31~
 		result = "비만";
 	}
 %>
-<h2>BMI 측정 결과</h2>
-<h1>당신은 <b class=text-info><%=result %></b>입니다.</h1>
-<p>BMI 수치: <%=BMI %>
+<div class="container">
+	<h1>BMI 측정 결과</h1>
+	<div class="display-4">당신은 <b class=text-info><%=result %></b>입니다.</div>
+	<p>BMI 수치: <%=BMI %>
+</div>
 </body>
 </html>

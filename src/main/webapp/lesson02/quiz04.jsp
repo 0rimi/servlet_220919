@@ -10,15 +10,22 @@
  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
  	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>quiz03</title>
+<title>Quiz04</title>
 </head>
 <body>
 	<div class="container">
-		<h1>체격 조건 입력</h1>
-		<form method="get" action="/lesson02/quiz03_1.jsp">
-			<input class="form-control col-2 d-inline mr-1" type="number" placeholder="키를 입력하세요" name="height"><span>cm</span>
-			<input class="form-control col-2 d-inline mr-1" type="number" placeholder="몸무게를 입력하세요." name="weight"><span>kg</span>
-			<button type="submit" class="btn btn-info">계산</button>
+		<h1>사칙연산 계산기</h1>
+		<form class="d-flex" method="post" action="/lesson02/quiz04_1.jsp">
+			<input type="number" class="form-control col-2 mr-1" name="num1">
+			<select class="form-control col-1 mr-1" name="sign">
+				<option>+</option>
+				<option>-</option>
+				<option>*</option>
+				<option>/</option>
+			</select>
+			<input type="number" class="form-control col-2 mr-1" name="num2">
+			
+			<button class="btn btn-success" type="submit">계산하기</button>
 		</form>
 	</div>
 </body>

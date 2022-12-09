@@ -10,16 +10,43 @@
  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
  	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>quiz03</title>
+<title>Quiz05_1</title>
 </head>
 <body>
+	<%
+		int num = Integer.parseInt((request.getParameter("num")));
+		
+		//checkbox, 여러 값 getParameterValues()
+		String[] units = request.getParameterValues("unit");
+		
+	%>
+	
 	<div class="container">
-		<h1>체격 조건 입력</h1>
-		<form method="get" action="/lesson02/quiz03_1.jsp">
-			<input class="form-control col-2 d-inline mr-1" type="number" placeholder="키를 입력하세요" name="height"><span>cm</span>
-			<input class="form-control col-2 d-inline mr-1" type="number" placeholder="몸무게를 입력하세요." name="weight"><span>kg</span>
-			<button type="submit" class="btn btn-info">계산</button>
-		</form>
+		<h1>길이 변환 결과</h1>
+		<h3><%=num %><span>cm</span></h3>
+		<hr>
+		<h2>
+			<% 
+				if(units != null){
+					for(String unit : units){
+						if(unit.equals("inch")){
+							double inch = num * 0.393701;
+							out.print(inch + " in<br>");
+						}else if(unit.equals("yard")){
+							double yard = num * 0.0109361;
+							out.print(yard + " yd<br>");
+						}else if(unit.equals("feet")){
+							double feet = num * 0.0328084;
+							out.print(feet + " ft<br>");
+						}else if(unit.equals("meter")){
+							double meter = num * 0.01;
+							out.print(meter + " m<br>");
+						}
+					}	
+				}
+				
+			%>
+		</h2>
 	</div>
 </body>
 </html>

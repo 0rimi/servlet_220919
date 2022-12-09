@@ -10,16 +10,24 @@
  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
  	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>quiz03</title>
+<title>Quiz05</title>
 </head>
 <body>
 	<div class="container">
-		<h1>체격 조건 입력</h1>
-		<form method="get" action="/lesson02/quiz03_1.jsp">
-			<input class="form-control col-2 d-inline mr-1" type="number" placeholder="키를 입력하세요" name="height"><span>cm</span>
-			<input class="form-control col-2 d-inline mr-1" type="number" placeholder="몸무게를 입력하세요." name="weight"><span>kg</span>
-			<button type="submit" class="btn btn-info">계산</button>
+		<h1>길이 변환</h1>
+		<form method="post" action="/lesson02/quiz05_1.jsp" >
+			<div class="d-flex align-items-end mb-1">
+				<input type="number" class="form-control col-3 mr-1" name="num"><span>cm</span>
+			</div>
+			<div>
+				<label>인치<input type="checkbox" name="unit" value="inch" checked></label>
+				<label>야드<input type="checkbox" name="unit" value="yard"></label>
+				<label>피트<input type="checkbox" name="unit" value="feet"></label>
+				<label>미터<input type="checkbox" name="unit" value="meter"></label>
+			</div>
+			<button type="submit" class="btn btn-success">변환하기</button>
 		</form>
+		
 	</div>
 </body>
 </html>
