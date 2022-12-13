@@ -82,7 +82,8 @@
 						<h2 class="text-info"><%=book.get("author") %></h2>
 						<h3 class="text-muted"><%=book.get("publisher") %></h3>
 					</div>							
-				<%}
+				<% break;
+				}
 			}%>
 		</div>
 		
