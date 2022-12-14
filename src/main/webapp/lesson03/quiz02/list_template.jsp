@@ -1,4 +1,3 @@
-<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,37 +10,41 @@
  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
  	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>채널 안내</title>
-	<style>
-		#wrap{width: 1000px}
-		header{height: 70px}
-		nav{height: 50px}
-		.container{padding:0px}
-	</style>
+<title>Melong</title>
+
+<style>
+	#wrap{min-height: 800px;}
+	.container{padding:0px;}
+	header{height: 80px;}
+	footer{height: 40px;}
+	nav{height: 50px;}
+	section{min-height: 630px;}
+	#artistBox{height: 200px;}
+	a:hover{text-decoration: none;}
+</style>
+
 </head>
 <body>
 	<div id="wrap" class="container">
-		<header class="d-flex justify-content-center align-items-center">
-			<h1 class="text-danger">SK Broadband IPTV</h1>
+		
+		<!-- header -->
+		<header class="d-flex align-items-center">
+			<jsp:include page="header.jsp"/>
 		</header>
-		<div id="cont">
-			<nav class="bg-danger d-flex align-items-center">
-				<jsp:include page="menu.jsp"></jsp:include>
-			</nav>
-			<%
-				String cate = request.getParameter("page")+".jsp";
-				//out.print(cate);
-			%>
-			<%if(cate.equals("null.jsp")){%>
-				<jsp:include page="content-all.jsp"/>
-			<% }else{%>
-				<jsp:include page="<%=cate %>"/>
-			<%}%>
-			
-			
-		</div>
-		<footer class="text-center text-secondary">
-			Copyright 2022. SK All right Reserved.
+		
+		<nav class="d-flex align-items-center">
+			<jsp:include page="nav.jsp"/>
+		</nav>
+		
+		<section>
+			<!-- 가수정보 -->
+			<jsp:include page="artistBox.jsp"/>
+			<!-- 곡 목록 -->
+			<jsp:include page="songList.jsp"/>
+		</section>
+		<hr>
+		<footer>
+			<p class="text-secondary ml-1">Copyright 2022.melng All Rights Reserved.</p>
 		</footer>
 	</div>
 </body>
