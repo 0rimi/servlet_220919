@@ -21,6 +21,7 @@
 	section{min-height: 630px;}
 	#artistBox{height: 200px;}
 	a:hover{text-decoration: none;}
+	.music-info-text{font-size:10px; color:#7777;}
 </style>
 
 </head>
@@ -37,10 +38,9 @@
 		</nav>
 		
 		<section>
-			<!-- 가수정보 -->
+			
 			<jsp:include page="artistBox.jsp"/>
-			<!-- 곡 목록 -->
-			<jsp:include page="songList.jsp"/>
+			
 		</section>
 		<hr>
 		<footer>

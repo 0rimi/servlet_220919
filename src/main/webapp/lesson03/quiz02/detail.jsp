@@ -20,37 +20,29 @@
 	footer{height: 40px;}
 	nav{height: 50px;}
 	section{min-height: 630px;}
-	#songBox table{font-size: 8px;}
-	#songBox p{margin:5px 0px;}
+	#artistBox{height: 200px;}
+	a:hover{text-decoration: none;}
+	.music-info-text{font-size:12px; color:#7777;}
 </style>
 
 <body>
 	<div id="wrap" class="container">
-		<!-- header -->
-		<jsp:include page="header.jsp"/>
 		
-		<div>
-			<nav class="d-flex align-items-center">
-				<ul class="nav nav-fill w-100 font-weight-bold col-6">
-					<li class="nav-item"><a href="" class="text-dark nav-link">멜롱챠트</a></li>
-					<li class="nav-item"><a href="" class="text-dark nav-link">최신음악</a></li>
-					<li class="nav-item"><a href="" class="text-dark nav-link">장르음악</a></li>
-					<li class="nav-item"><a href="" class="text-dark nav-link">멜롱DJ</a></li>
-					<li class="nav-item"><a href="" class="text-dark nav-link">뮤직어워드</a></li>
-				</ul>
-			</nav>
-			<section>
-				<!-- 곡 정보 -->
-				<h3 class="mt-3">곡 정보</h3>
-				<jsp:include page="songBox.jsp"/>
-				
-				<div id="lyrics">
-					<h3 class="mt-2 mb-2">가사</h3>
-					<hr>
-					<p>가사정보없음</p>
-				</div>
-			</section>
-		</div>
+		<!-- header -->
+		<header class="d-flex align-items-center">
+			<jsp:include page="header.jsp"/>
+		</header>
+		
+		<nav class="d-flex align-items-center">
+			<jsp:include page="nav.jsp"/>
+		</nav>
+		
+		<section>
+			<!-- 곡 정보 -->
+			<h3 class="mt-3">곡 정보</h3>
+			<jsp:include page="songBox.jsp"/>				
+		</section>
+		
 		<hr>
 		<footer>
 			<p class="text-secondary ml-1">Copyright 2022.melng All Rights Reserved.</p>
