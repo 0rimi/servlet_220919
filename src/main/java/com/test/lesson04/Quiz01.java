@@ -34,7 +34,7 @@ public class Quiz01 extends HttpServlet{
 		
 		// DB select & 결과출력
 		PrintWriter out = response.getWriter();
-		String selectQuery = "select * from `real_estate`";
+		String selectQuery = "select `address`,`area`,`type` from `real_estate` order by `id` desc limit 10";
 		try {
 			ResultSet rs = ms.select(selectQuery);
 			//결과 출력
