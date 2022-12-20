@@ -30,6 +30,7 @@
 			<tr>
 				<th>사이트</th>
 				<th>사이트 주소</th>
+				<th>삭제</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -39,10 +40,12 @@
 			<tr>
 				<td><%=rs.getString("name") %></td>
 				<td><%=rs.getString("url") %></td>
+				<td><a class="btn btn-danger" href="/lesson04/quiz01/quiz01_delete?id=<%=rs.getString("id") %>">삭제</a></td>
 			</tr>
 		</tbody>
 		<%}%>
 	</table>
+	<a class="btn btn-info" href="/lesson04/quiz01/quiz01_insert.jsp">추가</a>
 </div>	
 <%
 	// 연결해제

@@ -10,23 +10,26 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.test.common.MysqlService;
 
-@WebServlet("/lesson04/quiz01/quiz01_delete")
-public class Quiz01Insert extends HttpServlet{
+@WebServlet("/lesson04/quiz01/quiz01_insert")
+public class Quiz01Delete extends HttpServlet{
 	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		int id = Integer.parseInt(request.getParameter("id"));
+		String name = request.getParameter("name");
+		String url = request.getParameter("url");
 		
 		// db연결
 		MysqlService ms = MysqlService.getInstance();
 		ms.connect();
 		
-		// delete
-		String delete = "delete from `site`"
-				+ "where `id` = "+id+"";
+		// insert
+		String insert = "insert into `site`"
+				+ "(`name`,`url`)"
+				+ "values"
+				+ "('"+name+"','"+url+"')";
 		try {
-			ms.update(delete);
+			ms.update(insert);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
