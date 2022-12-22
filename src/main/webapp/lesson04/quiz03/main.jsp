@@ -38,11 +38,12 @@ time, mark, audio, video {
 #wrap{min-height: 780px; width: 1000px}
 header{height: 80px; background-color: rgb(233, 106, 51); font-size: 40px;}
 nav{height: 50px; background-color: rgb(233, 106, 51);}
-section{min-height: 650px; flex-wrap: wrap}
+section{min-height: 650px; flex-wrap: wrap; padding:2px;}
+section div{word-break:break-all; flex-wrap: wrap;}
 #itemBox{width: 320px;
 		 height: 300px;
 		 border: 3px solid rgb(233, 106, 51);
-		 margin: 20px 5px;
+		 margin: 20px 6px;
 		 padding: 8px;}
 #itemBox:hover{transform: scale(1.2); background-color: #dddd;}	
 #itemBox{transition: all 0.2s linear;}	 
